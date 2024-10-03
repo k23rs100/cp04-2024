@@ -151,6 +151,12 @@
 
     // 変数宣言
 
+    var active=false;
+    var startTime=0;
+    var period=0;
+    var rest=0;
+    var etime=0;
+
 
     
     // ボタンの初期設定
@@ -163,6 +169,16 @@
 
     // Alarmの処理
     function alarm(){
+        var canvas=$("#mycanvas")[0];
+        var ctx=canvas.getContext("2d");
+        var img=new Image();
+        img.src="ksuisbg.gif";
+        img.onload=function(){
+            ctx.drawImage(img,0,0,300,300);
+        };
+        var audio=new Audio();
+        audio.src="pin.wav";
+        audio.play();
         
         
     }
