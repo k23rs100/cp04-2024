@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-
+      
   </style>
   <script>
     // timer処理
@@ -173,7 +173,7 @@
         var canvas=$("#mycanvas")[0];
         var ctx=canvas.getContext("2d");
         var img=new Image();
-        img.src="ksuisbg.gif";
+        img.src="penguin.png";
         img.onload=function(){
             ctx.drawImage(img,0,0,300,300);
         };
@@ -205,7 +205,7 @@
         active = false; 
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() ); 
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period);
+        $("#remain").html("残り時間： " + period+"秒");
         
     }
     
@@ -216,12 +216,14 @@
             etime = parseInt( (new Date() - startTime)/1000 ); 
             rest = period - etime;
             $("#time").html("経過時間： " + etime); 
-            $("#remain").html("残り時間： " + rest); 
+            $("#remain").html("残り時間： " + rest+"秒"); 
             analog(rest);
             if(rest<=0){
                 active=false;
                 alarm();
             }
+        
+        
         }
         
         
@@ -230,7 +232,8 @@
   </script>
 </head>
 <body>
-    <canvas id="mycanvas" width="200" height="200">Test</canvas>
+    <canvas id="mycanvas" width="300" height="300">Test</canvas>
+    <canvas id="mycanvas2" width="300" height="300">Test</canvas>
 
     <div id="minuteStr">〇</div>
     <div id="secondStr">〇</div>
