@@ -165,18 +165,13 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
+        alarm2();
         
     }
 
     // Alarmの処理
     function alarm(){
-        var canvas=$("#mycanvas")[0];
-        var ctx=canvas.getContext("2d");
-        var img=new Image();
-        img.src="penguin.png";
-        img.onload=function(){
-            ctx.drawImage(img,0,0,300,300);
-        };
         var audio=new Audio();        
          audio.src="pin.wav";        
           audio.play();
@@ -184,6 +179,25 @@
         
         
     }
+    function alarm2(){
+        var canvas=$("#mycanvas")[0];
+        var ctx=canvas.getContext("2d");
+        var img=new Image();
+        img.src="penguin.png";
+        img.onload=function(){
+            ctx.drawImage(img,0,0,300,300);
+        };
+    }
+    function alarm3(){
+        var canvas=$("#mycanvas")[0];
+        var ctx=canvas.getContext("2d");
+        var img=new Image();
+        img.src="ksuisbg.gif";
+        img.onload=function(){
+            ctx.drawImage(img,0,0,300,300);
+        };
+    }
+    
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
@@ -221,6 +235,8 @@
             if(rest<=0){
                 active=false;
                 alarm();
+                alarm3();
+               
             }
         
         
